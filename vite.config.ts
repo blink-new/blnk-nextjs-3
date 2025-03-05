@@ -18,10 +18,11 @@ export default defineConfig({
       usePolling: true,
     },
     hmr: {
-      protocol: 'wss', // Use secure WebSockets
-      clientPort: 443, // Standard HTTPS port
-      host: '.blink.new', // Accept any blink.new subdomain
-      timeout: 120000 // Increase timeout for better connection stability
+      // Using auto detection for HMR
+      protocol: 'wss',
+      clientPort: 443,
+      // Don't specify host to let Vite auto-detect it
+      timeout: 120000
     },
     allowedHosts: ['.blink.new']
   },
