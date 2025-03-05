@@ -18,8 +18,10 @@ export default defineConfig({
       usePolling: true,
     },
     hmr: {
-      clientPort: 443,
-      host: 'localhost'
+      protocol: 'wss', // Use secure WebSockets
+      clientPort: 443, // Standard HTTPS port
+      host: '.blink.new', // Accept any blink.new subdomain
+      timeout: 120000 // Increase timeout for better connection stability
     },
     allowedHosts: ['.blink.new']
   },
